@@ -1,24 +1,56 @@
 package Practice;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BankAccount {
-    BankAccount userAccount = new BankAccount();
    static Scanner input = new Scanner(System.in);
-   static ArrayList<String[]> customerAccount = new ArrayList<>();
+
     private double balance;
     private int pin;
     private String firstName;
     private String lastName;
     private String phoneNumber;
 
-    public  BankAccount(){
+    public BankAccount(String firstName, String lastName, String phoneNumber) {
+        this.firstName =  firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
         this.pin = pin;
-         this.firstName =  firstName;
-         this.lastName = lastName;
-         this.phoneNumber = phoneNumber;
     }
 
+    public static void languagePreference(){
+        System.out.println("Select your language of preference");
+        System.out.println("""
+                1-> Yoruba
+                2-> Igbo
+                3-> Hausa
+                4-> Ibibio
+                5-> English
+                """);
+        String languageOptions = input.next();
+        switch(languageOptions){
+            case "1":yoruba();
+            case "2":igbo();
+            case "3":hausa();
+            case "4":ibibio();
+            case "5":english();
+        }
+    }
+
+    private static void english() {
+        mainMenu();
+    }
+    private static void ibibio() {
+        System.out.println("Sorry! The Ibibio language is not up to date on this machine. ");
+    }
+    private static void hausa() {
+        System.out.println("Sorry! The Hausa language is not up to date on this machine. ");
+    }
+    private static void igbo() {
+        System.out.println("Sorry! The Igbo language is not up to date on this machine. ");
+    }
+    private static void yoruba() {
+        System.out.println("Sorry! The Yoruba language is not up to date on this machine. ");
+    }
     public static void mainMenu(){
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to Banke Bank");
@@ -33,7 +65,6 @@ public class BankAccount {
                 0 -> Exit
                 """);
         String options = input.next();
-
         switch(options){
             case "1": createAccount(); break;
             case "2": deposit(); break;
@@ -46,21 +77,25 @@ public class BankAccount {
         }
     }
     public static void exit() {
-        System.out.print("Do you want to perform another transactions: ");
+        print("Do you want to perform another transactions: ");
         String userResponse = input.next();
-        if(userResponse.equals("yes")){
-            mainMenu();
-        }else{
-            System.out.println("Thank you for using our service: ");
-        }
     }
     public static void closeAccount() {
     }
+    public static String input(String prompt){
+       System.out.println(prompt);
+        Scanner scanner = new Scanner(System.in);
+        print(scanner.nextLine());
+        return scanner.nextLine();
+    }
+    public static void print(String input){
+        System.out.print(input);
+    }
     public static void changePin() {
     }
-    public static void balance() {
-        System.out.print("Enter your pin: ");
-        String pin = input.next();
+    public static short balance() {
+
+        return 0;
     }
     public  static void transfer() {
     }
@@ -68,16 +103,9 @@ public class BankAccount {
     }
     public static void deposit() {
     }
-    public static void createAccount() {
-        System.out.print("Enter your first name: ");
-         String firstName = input.next();
-        System.out.print("Enter your last name: ");
-         String lastName = input.next();
-        System.out.print("Please Enter your phone number: ");
-         String phoneNumber = input.next();
-        String[] customerAccount = {firstName, lastName, phoneNumber};
-        for(int index = 0; index < customerAccount.length; index++){
-        }
+    public static void  createAccount() {
+         String fullName = input("Enter your full name: ");
+         String phoneNumber = input("Enter your phone number: ");
         mainMenu();
     }
     public static void main(String...args){

@@ -1,22 +1,17 @@
 package Practice;
-
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class ReversedArrays {
-    static Scanner userInput = new Scanner(System.in);
-    public static int reverseNumbers(int [] numbers){
-        //int[] newArrays = new int[10];
-        int reversed = 0;
-        for(int index = 0; index < numbers.length; index++){
-            reversed = numbers[index];
-            numbers[index] = reversed;
+
+
+    public static void main(String[] args) {
+        int [] arrays = {1,2,3,4,5,6,7,8,9,10};
+
+        for(int index = 0; index < arrays.length; index++){
+            System.out.println( arrays[index]);
+        }
+        for (int index = arrays.length-1; index > 0 ; index--){
+            System.out.println( arrays[index]);
 
         }
-        return 0;
-    }
-    public static void main(String... args){
-        int[] result = {12,2,3,4};
-        reverseNumbers(result);
     }
 }
+
