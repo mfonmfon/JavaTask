@@ -6,7 +6,6 @@ public class AddElement {
         int[] newArrays = new int[arrays.length];
         for(int index = 0; index < arrays.length; index++){
            newArrays[index] += arrays[index];
-
         }
        return newArrays;
     }
