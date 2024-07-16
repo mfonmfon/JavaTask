@@ -3,7 +3,7 @@ package BankApp;
 public class Account {
 
     private String accountNumber;
-    private double balance;
+    private int balance;
     private String accountName;
     private String pin;
 
@@ -25,14 +25,14 @@ public class Account {
 
     public void deposit(int amount){
         if(amount > 0){
-            this.balance = balance + 1;
+            this.balance = balance + amount;
         }
     }
-    public double withdraw(int amount, String accountNumber ){
-        if(this.balance >= amount|| amount < balance){
-            return balance = balance - 1;
+   public void withdraw(int amount){
+        if(this.balance >= amount){
+            balance -= amount;
         }
-    }
+   }
 }
 
 
