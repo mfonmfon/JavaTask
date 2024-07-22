@@ -1,8 +1,8 @@
 package InterfacePractice;
 
 public class MyArrayLists implements MyList {
-    private int size = 0;
-
+    public final int size = 0;
+    private final boolean isLocked = true;
     @Override
     public int size() {
         return 0;

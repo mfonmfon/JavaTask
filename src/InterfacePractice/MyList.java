@@ -1,6 +1,7 @@
 package InterfacePractice;
 
 public interface MyList {
+
  public int size();
 
  public void remove(String element);
