@@ -17,10 +17,6 @@ public class HugeInteger {
     return value;
   }
 
-
-
-
-
   public static void main(String[] args){
     HugeInteger hugeInteger = new HugeInteger();
     System.out.println(hugeInteger.parse("1234567890123456789012345678901234567890"));
